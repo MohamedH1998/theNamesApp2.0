@@ -9,6 +9,7 @@ import { IoShareSocialSharp } from "react-icons/io5";
 import { ImCheckboxUnchecked, ImCheckboxChecked } from "react-icons/im";
 
 import { useEffect, useState } from "react";
+import shareName from "../utils/shareName";
 
 export default function CardModal({
   setCardModal,
@@ -75,10 +76,10 @@ export default function CardModal({
           opacity: 0,
           transition: { duration: 0.3, ease: [0.36, 0.66, 0.04, 1] }
         }}
-        className="fixed inset-0 h-full w-full bg-slate-700/60 backdrop-blur-sm"
+        className="fixed inset-0 w-full h-full bg-slate-700/60 backdrop-blur-sm"
       />
 
-      <div className="pointer-events-none relative flex h-full w-full flex-col items-center justify-center px-4 ">
+      <div className="relative flex flex-col items-center justify-center w-full h-full px-4 pointer-events-none ">
         <motion.div
           initial={{ scale: 0 }}
           animate={{
@@ -92,27 +93,27 @@ export default function CardModal({
             transition: { duration: 0.3, ease: [0.36, 0.66, 0.04, 1] }
           }}
           style={{ width: cardWidth, height: cardHeight }}
-          className="pointer-events-auto relative flex flex-col items-center rounded-lg bg-white px-4 py-4 shadow-md "
+          className="relative flex flex-col items-center px-4 py-4 bg-white rounded-lg shadow-md pointer-events-auto "
         >
           <div className="flex flex-col items-center justify-start">
-            <p className="absolute top-2 left-2 p-4 text-xs font-medium text-gray-500">
+            <p className="absolute p-4 text-xs font-medium text-gray-500 top-2 left-2">
               {name.order}
             </p>
-            <div className="mt-2 h-16 w-auto">
+            <div className="w-auto h-16 mt-2">
               <Image
                 src={urlFor(name.svg).url()}
                 width={87}
                 height={64}
-                className="mx-auto h-full w-max object-contain"
+                className="object-contain h-full mx-auto w-max"
                 alt="name"
                 priority
               />
             </div>
-            <p className="mt-3 text-center text-xl font-semibold">
+            <p className="mt-3 text-xl font-semibold text-center">
               {name.name}
             </p>
-            <p className="mt-1 text-center text-xs">{name.translation}</p>
-            <p className="mt-3 text-left text-sm">{name.definition}</p>
+            <p className="mt-1 text-xs text-center">{name.translation}</p>
+            <p className="mt-3 text-sm text-left">{name.definition}</p>
           </div>
           <div className="mt-auto ">
             <Switch
@@ -127,7 +128,7 @@ export default function CardModal({
           <div className="group">
             <button
               onClick={() => shareName(name, setCopyToClipBoard)}
-              className="absolute top-4 right-4 text-3xl text-clr-secondary-accent"
+              className="absolute text-3xl top-4 right-4 text-clr-secondary-accent"
             >
               <IoShareSocialSharp />
             </button>
