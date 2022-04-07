@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 1 999;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v23/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+/* latin */
+@font-face {
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotomono/v13/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_AP2_ROW-AJi8SJQt.woff)
+    format("woff");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+#__next,
+html,
+body,
+#mainApp {
+  min-height: 100vh;
+  height: 100%;
+  overscroll-behavior: none;
+  overflow: hidden;
+}
+
+* {
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+}
+
+*::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.checkbox {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center center;
+  cursor: pointer;
+  position: relative;
+}
+.checkbox .checkbox-container {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 35%;
+  position: absolute;
+  margin: auto;
+  display: grid;
+  place-items: center center;
+}
+.checkbox .checkbox-container--front {
+  overflow: hidden;
+}
+.checkbox .checkbox-container--back {
+  border: #0a8059 solid 3px;
+}
+.checkbox .checkmark {
+  fill: none;
+  position: relative;
+  padding-left: 0.25rem;
+  padding-bottom: 0.2rem;
+}
+.checkbox .checkmark path {
+  stroke-width: 35;
+  stroke-linecap: round;
+}
+.checkbox .checkmark--front path {
+  stroke: white;
+}
+.checkbox .checkmark--back path {
+  stroke: #0a8059;
+}
+.checkbox .lines-container {
+  height: 1.5rem;
+  width: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: rotate(-33deg);
+  border-radius: 50%;
+  position: absolute;
+  top: 0rem;
+  right: 0.2rem;
+}
+.checkbox .line {
+  height: 2px;
+  width: 13px;
+  background: #0a8059;
+  border-radius: 50%;
+  transform-origin: left;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  margin-left: 2.5rem;
+}
+.checkbox .line--1 {
+  transform: rotate(-25deg);
+}
+.checkbox .line--3 {
+  transform: rotate(25deg);
+}
