@@ -88,11 +88,11 @@ export default function Nav({ isOpen }) {
           </Link>
         </motion.div> */}
         <motion.div variants={linksVariant}>
-          <Link href="https://freesuggestionbox.com/pub/hkxqqxc">
+          <Link href="https://docs.google.com/forms/d/e/1FAIpQLScBlK9f2O1X7nV9ry7JvjBJB0g4g_fgJ_XCJA2vVgGFZGP7YQ/viewform">
             <a
               target="_blank"
               rel="noreferrer"
-              className="rounded-md text-2xl font-semibold capitalize tracking-wider transition-colors hover:text-white focus:outline-none focus-visible:ring-2"
+              className="text-2xl font-semibold tracking-wider capitalize transition-colors rounded-md hover:text-white focus:outline-none focus-visible:ring-2"
             >
               Feedback
             </a>

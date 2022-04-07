@@ -66,10 +66,10 @@ export default function Modal({
             opacity: 0,
             transition: { duration: 0.3, ease: [0.36, 0.66, 0.04, 1] }
           }}
-          className="fixed inset-0 h-full w-full bg-slate-700/60 backdrop-blur-sm"
+          className="fixed inset-0 w-full h-full bg-slate-700/60 backdrop-blur-sm"
         />
 
-        <div className="pointer-events-none relative flex h-full w-full flex-col items-center justify-center px-4 ">
+        <div className="relative flex flex-col items-center justify-center w-full h-full px-4 pointer-events-none ">
           <motion.div
             initial={{ y: "120%" }}
             animate={{
@@ -88,12 +88,12 @@ export default function Modal({
                 <MdClose size={24} />
               </button>
             </div>
-            <div className="mt-2 h-full w-full overflow-hidden overflow-y-scroll ">
+            <div className="w-full h-full mt-2 overflow-hidden overflow-y-scroll ">
               {names.map((name, index) => (
                 <div key={name._id}>
                   <div className=" flex items-center  justify-between border-b-[1px] py-4 px-4">
                     <div
-                      className="flex flex-grow cursor-pointer items-center space-x-2"
+                      className="flex items-center flex-grow space-x-2 cursor-pointer"
                       onClick={() => {
                         setCardToShowIndex(index);
                         setCardModal(true);
@@ -103,12 +103,12 @@ export default function Modal({
                       <span className="text-lg">{name.name}</span>
                     </div>
 
-                    <div className="mt-2 flex">
+                    <div className="flex mt-2">
                       <Switch
                         checked={storedNames.includes(name._id)}
                         onChange={() => handleMemorizedNameToggle(name)}
                       >
-                        <i className="animate-pulse text-3xl text-clr-success transition delay-150 ease-in-out ">
+                        <i className="text-2xl transition ease-in-out delay-150 animate-pulse text-clr-success ">
                           {storedNames.includes(name._id) ? (
                             <ImCheckboxChecked />
                           ) : (
